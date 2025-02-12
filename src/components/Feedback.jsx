@@ -1,9 +1,7 @@
-import React from "react";
-
-export default function Feedback() {
+export default function Feedback({ tasksToComplete }) {
   return (
     <>
-      <div className="mt-4">Feedback</div>
+      <div className="mt-4">You have {tasksToComplete} tasks to complete</div>
     </>
   );
 }

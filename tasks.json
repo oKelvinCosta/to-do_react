@@ -1,12 +1,7 @@
 [
-  { "done": false, "description": "Estudar React" },
-  { "done": false, "description": "Estudar Next.js" },
-  { "done": false, "description": "Estudar TypeScript" },
-  { "done": false, "description": "Estudar Tailwind CSS" },
-  { "done": false, "description": "Estudar Vite" },
-  { "done": false, "description": "Estudar Vitest" },
-  { "done": false, "description": "Estudar React Query" },
-  { "done": false, "description": "Estudar Zustand" },
-  { "done": false, "description": "Estudar React Hook Form" },
-  { "done": false, "description": "Estudar React Table" }
+  { "id": 1, "done": true, "description": "Estudar React" },
+  { "id": 2, "done": false, "description": "Estudar Next.js" },
+  { "id": 3, "done": false, "description": "Estudar TypeScript" },
+  { "id": 4, "done": true, "description": "Estudar Tailwind CSS" },
+  { "id": 5, "done": false, "description": "Estudar Vite" }
 ]
