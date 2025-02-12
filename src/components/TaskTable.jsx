@@ -4,7 +4,9 @@ import TaskRow from "./TaskRow";
 export default function TaskTable() {
   return (
     <>
-      <TaskRow />
+      <div>
+        <TaskRow />
+      </div>
     </>
   );
 }

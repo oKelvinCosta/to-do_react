@@ -9,8 +9,10 @@ import TodoList from "./components/TodoList";
 function App() {
   return (
     <>
-      <div className="container">
-        <TodoList />
+      <div className="bg-slate-800 ">
+        <div className="container ">
+          <TodoList />
+        </div>
       </div>
     </>
   );

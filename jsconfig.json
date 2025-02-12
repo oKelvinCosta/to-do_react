@@ -1,0 +1,8 @@
+{
+  // Let the vs code help with paths
+  "compilerOptions": {
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  }
+}

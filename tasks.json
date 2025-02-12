@@ -1,0 +1,12 @@
+[
+  { "done": false, "description": "Estudar React" },
+  { "done": false, "description": "Estudar Next.js" },
+  { "done": false, "description": "Estudar TypeScript" },
+  { "done": false, "description": "Estudar Tailwind CSS" },
+  { "done": false, "description": "Estudar Vite" },
+  { "done": false, "description": "Estudar Vitest" },
+  { "done": false, "description": "Estudar React Query" },
+  { "done": false, "description": "Estudar Zustand" },
+  { "done": false, "description": "Estudar React Hook Form" },
+  { "done": false, "description": "Estudar React Table" }
+]

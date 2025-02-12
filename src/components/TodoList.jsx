@@ -5,8 +5,10 @@ import TaskTable from "./TaskTable";
 export default function TodoList() {
   return (
     <>
-      <Searchbar />
-      <TaskTable />
+      <div className="bg-slate-100 p-6 rounded">
+        <Searchbar />
+        <TaskTable />
+      </div>
     </>
   );
 }
