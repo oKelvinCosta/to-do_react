@@ -1,6 +1,6 @@
 {
-  // Let the vs code help with paths
   "compilerOptions": {
+    "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]
     }
