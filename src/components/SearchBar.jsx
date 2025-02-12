@@ -7,7 +7,7 @@ export default function SearchBar() {
     <>
       <div className="flex relative w-full gap-2">
         <Textarea placeholder="Your task" className="pr-[80px]" />
-        <Button className="absolute right-3 bottom-3 ">Add</Button>
+        <Button className="absolute right-3 bottom-3">Add</Button>
       </div>
     </>
   );
