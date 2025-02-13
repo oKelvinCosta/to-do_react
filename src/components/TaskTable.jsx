@@ -1,7 +1,6 @@
-import React from "react";
 import TaskRow from "./TaskRow";
 
-export default function TaskTable({ tasks }) {
+export default function TaskTable({ tasks, handleCheked }) {
   return (
     <>
       <table className="w-full">
@@ -13,6 +12,7 @@ export default function TaskTable({ tasks }) {
                 id={task.id}
                 done={task.done}
                 description={task.description}
+                handleCheked={handleCheked}
               />
             );
           })}

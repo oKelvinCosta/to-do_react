@@ -1,7 +1,7 @@
 [
-  { "id": 1, "done": true, "description": "Estudar React" },
+  { "id": 1, "done": false, "description": "Estudar React" },
   { "id": 2, "done": false, "description": "Estudar Next.js" },
   { "id": 3, "done": false, "description": "Estudar TypeScript" },
-  { "id": 4, "done": true, "description": "Estudar Tailwind CSS" },
+  { "id": 4, "done": false, "description": "Estudar Tailwind CSS" },
   { "id": 5, "done": false, "description": "Estudar Vite" }
 ]
