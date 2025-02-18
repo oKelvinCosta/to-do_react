@@ -1,6 +1,6 @@
 import TaskRow from "./TaskRow";
 
-export default function TaskTable({ tasks, handleCheked }) {
+export default function TaskTable({ tasks, handleCheked, handleDelete }) {
   return (
     <>
       <table className="w-full">
@@ -13,6 +13,7 @@ export default function TaskTable({ tasks, handleCheked }) {
                 done={task.done}
                 description={task.description}
                 handleCheked={handleCheked}
+                handleDelete={handleDelete}
               />
             );
           })}

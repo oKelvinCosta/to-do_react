@@ -1,9 +1,15 @@
 import { Checkbox } from "@/components/ui/checkbox";
-import { cn } from "@/lib/utils";
 import { Trash2 } from "lucide-react";
-import { CircleCheck } from "lucide-react";
 
-export default function TaskRow({ id, done, description, handleCheked }) {
+import PropTypes from "prop-types";
+
+export default function TaskRow({
+  id,
+  done,
+  description,
+  handleCheked,
+  handleDelete,
+}) {
   function archiveDoneTask(id) {
     console.log(id);
   }
@@ -34,6 +40,9 @@ export default function TaskRow({ id, done, description, handleCheked }) {
           }}
         >
           <Trash2
+            onClick={() => {
+              handleDelete(id);
+            }}
             className={`h-5   ${done ? "text-green-600" : "text-gray-500"}`}
           />
         </button>
@@ -41,3 +50,11 @@ export default function TaskRow({ id, done, description, handleCheked }) {
     </tr>
   );
 }
+
+TaskRow.propTypes = {
+  id: PropTypes.number.isRequired,
+  done: PropTypes.bool.isRequired,
+  description: PropTypes.string.isRequired,
+  handleCheked: PropTypes.func.isRequired,
+  handleDelete: PropTypes.func.isRequired,
+};

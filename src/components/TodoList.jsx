@@ -1,7 +1,9 @@
 import { useState } from "react";
-import Searchbar from "./EntryBar";
+import EntryBar from "./EntryBar";
 import TaskTable from "./TaskTable";
 import Feedback from "./Feedback";
+
+// import fs from "fs";
 
 import tasksJson from "../../tasks.json";
 
@@ -15,15 +17,42 @@ export default function TodoList() {
    * @param {number} id - The unique identifier of the task to be modified.
    */
 
-  function handleCheked(id) {
+  function handleCheked(taskId) {
     const newTasks = tasks.map((taskItem) => {
-      if (taskItem.id === id) {
+      if (taskItem.id === taskId) {
         return { ...taskItem, done: !taskItem.done };
       }
       return taskItem;
     });
     setTasks(newTasks);
-    setTasks(newTasks);
+  }
+
+  /**
+   * Deletes the task identified by the given id.
+   * Updates the tasks state with the modified task list.
+   *
+   * @param {number} taskId - The unique identifier of the task to be deleted.
+   */
+  function handleDelete(taskId) {
+    const newTask = tasks.filter((task) => task.id !== taskId);
+    setTasks(newTask);
+  }
+
+  function onAddTask(description) {
+    const newTask = {
+      id: tasks.length + 1,
+      done: false,
+      description: description,
+    };
+    setTasks([...tasks, newTask]);
+
+    // Update JSON file
+    // const fileName = "../../tasks.json";
+    // fs.writeFile(tasksJson, JSON.stringify(tasksJson), function writeJSON(err) {
+    //   if (err) return console.log(err);
+    //   console.log(JSON.stringify(tasksJson));
+    //   console.log("writing to " + fileName);
+    // });
   }
 
   /**
@@ -37,8 +66,12 @@ export default function TodoList() {
   return (
     <>
       <div className="bg-slate-100 p-6 rounded w-full min-h-[600px]">
-        <Searchbar />
-        <TaskTable tasks={tasks} handleCheked={handleCheked} />
+        <EntryBar onAddTask={onAddTask} />
+        <TaskTable
+          tasks={tasks}
+          handleCheked={handleCheked}
+          handleDelete={handleDelete}
+        />
         <Feedback tasksToComplete={tasksToComplete()} />
       </div>
     </>
