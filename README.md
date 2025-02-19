@@ -1,6 +1,8 @@
-# React + Vite
+# React + Vite + SCORM
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules. Beyond this, React Router DOM with hash mode works for launching a SCORM app.
+
+Obs.: The SCORM APi is not here in this projetct.
 
 Currently, two official plugins are available:
 
