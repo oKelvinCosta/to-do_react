@@ -1,25 +1,33 @@
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useState } from "react";
 import PropTypes from "prop-types";
 
 export default function EntryBar({ onAddTask }) {
-  const [entryText, setEntryText] = useState("");
+  const [entryTitle, setEntryTitle] = useState("");
+  const [entryDescription, setEntryDescription] = useState("");
 
   return (
     <>
-      <div className="flex relative w-full gap-2">
+      <div className="flex flex-col relative w-full gap-2">
+        <Input
+          onChange={(e) => setEntryTitle(e.target.value)}
+          placeholder="Title"
+          value={entryTitle}
+        />
         <Textarea
-          onChange={(e) => setEntryText(e.target.value)}
-          placeholder="Your task"
+          onChange={(e) => setEntryDescription(e.target.value)}
+          placeholder="Your description"
           className="pr-[80px]"
-          value={entryText}
+          value={entryDescription}
         />
         <Button
           onClick={() => {
-            if (entryText && entryText.trim()) {
-              onAddTask(entryText);
-              setEntryText("");
+            if (entryTitle && entryTitle.trim()) {
+              onAddTask(entryTitle, entryDescription);
+              setEntryTitle("");
+              setEntryDescription("");
             }
           }}
           className="absolute right-3 bottom-3"

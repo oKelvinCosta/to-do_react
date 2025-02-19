@@ -1,16 +1,31 @@
+import "@/assets/css/index.css";
 import reactLogo from "@/assets/react.svg";
-import "./App.css";
-import TodoList from "@/components/TodoList";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import TaskPage from "./pages/TaskPage.jsx";
+import TodoListPage from "./pages/TodoListPage.jsx";
+import Bg from "./components/Bg.jsx";
+import BoxApp from "./components/BoxApp.jsx";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <TodoListPage />,
+  },
+  {
+    path: "/task",
+    element: <TaskPage />,
+  },
+]);
 
 function App() {
   return (
     <>
-      <div className="bg-indigo-500 flex items-center justify-center h-screen">
-        <div className="container max-w-[580px] mx-auto px-3 flex flex-col items-center justify-center">
-          <img src={reactLogo} className="logo" alt="React logo" />
-          <TodoList />
-        </div>
-      </div>
+      <Bg>
+        <img src={reactLogo} className="logo" alt="React logo" />
+        <BoxApp>
+          <RouterProvider router={router} />
+        </BoxApp>
+      </Bg>
     </>
   );
 }
